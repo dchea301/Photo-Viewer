@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Photo Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="outer">
+        <h1><u>Photo Viewer</u></h1>
+        <form>
+            <div class="viewer">
+                <div class="imageContainer">
+                    <img id="display" src="InitialImage.jpg" alt="display picture">
+                </div>
+            </div>
+
+            <fieldset>
+                <legend><b>Status</b></legend>
+                <div>
+                    <p>Photo Being Displayed <input id="imageName"></p>
+
+                </div>
+
+                <div id="errorMsg">Photo Viewer System</div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <b>Loading Images (Local Folder)</b>
+                </legend>
+                <div>
+                    <span> Photos' Folder: <input id="fname"> </span>
+                    <span>Common Name: <input id="cname"></span>
+                </div>
+                <br>
+                <div>
+                    <span> Start Photo Number: <input id="snum"> </span>
+                    <span> End Photo Number: <input id="enum"></span>
+                </div>
+
+                <button type="button" onclick="fetchFromLocal()">Load</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Loading Images (JSON File) </legend>
+                <span>URL:
+                    <input type="text" id="url"
+                        value="http://www.cs.umd.edu/~nelson/classes/resources/cmsc335/images/imagesSet1.json">
+                    <button type="button" onclick="fetchFromUrl()">Load JSON</button>
+                </span>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Iterating</legend>
+                <button type="button" onclick="prev()">Previous Photo</button>
+                <button type="button" onclick="next()">Next Photo</button>
+                <button type="button" onclick="first()">First Photo</button>
+                <button type="button" onclick="last()">Last Photo</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Slideshows</legend>
+                <button type="button" onclick="slideShow()">SlideShow</button>
+                <button type="button" onclick="randomSlideShow()">RandomSlideShow</button>
+                <button type="button" onclick="stopSlideShow()">StopSlideShow</button>
+            </fieldset>
+
+            <hr>
+
+            <div>
+                <button type="button" onclick="reset()">Reset Form Value</button>
+            </div>
+
+        </form>
+    </div>
+    <script src="code.js"></script>
+</body>
+
+</html>
