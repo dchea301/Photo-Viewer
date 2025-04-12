@@ -3,7 +3,7 @@
 This was a project I completed in my final year of college in a web design class using HTML CSS and JavaScript.
 It is a simple web app that allows users to view a collection of images from a local folder or a JSON file. It supports manual navigation between photos, automated slideshows, and random slideshows.
 
-# It Features:
+# Features:
 Load Images from Local Folder: Input folder name, common name, start and end photo numbers to load a batch of images.
 
 
