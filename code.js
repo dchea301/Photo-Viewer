@@ -1,7 +1,7 @@
 // DOM Selectors
-const errorMsg = document.querySelector("#errorMsg")
 const display = document.querySelector("#display");
-const displayName = document.querySelector("#imageName")
+const displayName = document.querySelector("#imageName");
+const errorMsg = document.querySelector("#errorMsg");
 
 
 
@@ -38,7 +38,7 @@ function fetchFromUrl() {
 }
 
 function fetchFromLocal() {
-    fname = document.getElementById("fname").value + document.getElementById("cname").value
+    fname = document.getElementById("fname").value + "/" + document.getElementById("cname").value
     start = parseInt(document.getElementById("snum").value)
     end = parseInt(document.getElementById("enum").value)
     mode = false;
@@ -58,7 +58,6 @@ function fetchFromLocal() {
     currIdx = 0;
     displayImage(dataArr, currIdx, false);
 }
-
 
 function prev() {
     if (currIdx > 0) {
@@ -146,4 +145,25 @@ function randomSlideShow() {
 
 function stopSlideShow() {
     clearInterval(imgId)
+}
+
+function reset() {
+    // Clear the arrays storing the images
+    dataArr = [];
+    dataArrName = [];
+
+    // Clear the display area (reset the image source to a placeholder or empty)
+    display.src = ""; // or set to a default image like "InitialImage.jpg"
+
+    // Clear any input fields or form values
+    document.getElementById("fname").value = "";
+    document.getElementById("cname").value = "";
+    document.getElementById("snum").value = "";
+    document.getElementById("enum").value = "";
+
+    // Reset any other necessary variables
+    currIdx = 0;
+
+    // Reset the error message
+    errorMsg.textContent = "Photo Viewer System";
 }
